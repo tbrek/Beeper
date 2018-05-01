@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Beeper" customModuleProvider="target">
             <connections>
                 <outlet property="beepButton" destination="dNb-LF-3fY" id="7qP-VT-ud5"/>
@@ -19,6 +19,7 @@
                 <outlet property="startstopButton" destination="SFC-o5-e7X" id="FSC-uD-Rfl"/>
                 <outlet property="timeLabel" destination="pB3-4L-1zh" id="0eu-BG-qnZ"/>
                 <outlet property="timeSlider" destination="5hr-5v-yZf" id="i0g-Zd-wux"/>
+                <outlet property="whitenoiseButton" destination="tXN-WI-Ukk" id="4CK-Td-5ju"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -97,14 +98,14 @@
         <window title="Beeper" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="324" height="101"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="contentRect" x="335" y="390" width="324" height="123"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="324" height="101"/>
+                <rect key="frame" x="0.0" y="0.0" width="324" height="123"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5hr-5v-yZf">
-                        <rect key="frame" x="18" y="64" width="222" height="24"/>
+                        <rect key="frame" x="18" y="86" width="222" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="30" doubleValue="1" tickMarkPosition="above" numberOfTickMarks="30" allowsTickMarkValuesOnly="YES" sliderType="linear" id="irW-cX-jt0"/>
                         <connections>
@@ -112,7 +113,7 @@
                         </connections>
                     </slider>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-LF-3fY">
-                        <rect key="frame" x="19" y="41" width="54" height="18"/>
+                        <rect key="frame" x="19" y="63" width="54" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title="Beep" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="WK2-fQ-ev3">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -123,7 +124,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4qX-ei-DBb">
-                        <rect key="frame" x="19" y="19" width="66" height="18"/>
+                        <rect key="frame" x="19" y="41" width="66" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title="Silence" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="3Q4-PM-119">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -133,8 +134,19 @@
                             <action selector="silenceButtonDown:" target="Voe-Tx-rLC" id="e2V-Ga-M9S"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXN-WI-Ukk">
+                        <rect key="frame" x="19" y="19" width="133" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="radio" title="White noise (loop)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="BVe-av-9rj">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="whitenoiseButtonDown:" target="Voe-Tx-rLC" id="pwK-be-AfS"/>
+                        </connections>
+                    </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pB3-4L-1zh">
-                        <rect key="frame" x="252" y="63" width="28" height="22"/>
+                        <rect key="frame" x="252" y="85" width="28" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="1" drawsBackground="YES" id="Ndw-V1-KEo">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="bG5-44-6sa"/>
@@ -144,7 +156,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5D-6Q-b7x">
-                        <rect key="frame" x="280" y="64" width="26" height="17"/>
+                        <rect key="frame" x="280" y="86" width="26" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="min" id="VDO-T2-Onx">
                             <font key="font" metaFont="system"/>
@@ -165,7 +177,7 @@
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="53" y="-235.5"/>
+            <point key="canvasLocation" x="53" y="-224.5"/>
         </window>
     </objects>
 </document>
