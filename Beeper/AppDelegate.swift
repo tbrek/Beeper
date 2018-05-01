@@ -100,14 +100,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func playSomething() {
         if beepButton.state == .on {
             NSSound(named: NSSound.Name(rawValue: "beep.mp3"))?.play()
-            print("beep")
         }
         if silenceButton.state == .on {
             NSSound(named: NSSound.Name(rawValue: "silence.mp3"))?.play()
-            print("shhh")
         }
         if whitenoiseButton.state == .on {
-            print("test")
             let path = Bundle.main.path(forResource: "whitenoise", ofType:"mp3")!
             let url = URL(fileURLWithPath: path)
             do {
