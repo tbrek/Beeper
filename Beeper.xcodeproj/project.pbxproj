@@ -10,6 +10,8 @@
 		D5B89CC320984CA000191A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B89CC220984CA000191A92 /* AppDelegate.swift */; };
 		D5B89CC520984CA000191A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B89CC420984CA000191A92 /* Assets.xcassets */; };
 		D5B89CC820984CA000191A92 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5B89CC620984CA000191A92 /* MainMenu.xib */; };
+		D5B89CD320987F0C00191A92 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D5B89CD120987F0C00191A92 /* beep.mp3 */; };
+		D5B89CD420987F0C00191A92 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D5B89CD220987F0C00191A92 /* silence.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		D5B89CC720984CA000191A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D5B89CC920984CA000191A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5B89CCA20984CA000191A92 /* Beeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Beeper.entitlements; sourceTree = "<group>"; };
+		D5B89CD120987F0C00191A92 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		D5B89CD220987F0C00191A92 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		D5B89CC120984CA000191A92 /* Beeper */ = {
 			isa = PBXGroup;
 			children = (
+				D5B89CD020987EE500191A92 /* Resuorces */,
 				D5B89CC220984CA000191A92 /* AppDelegate.swift */,
 				D5B89CC420984CA000191A92 /* Assets.xcassets */,
 				D5B89CC620984CA000191A92 /* MainMenu.xib */,
@@ -58,6 +63,15 @@
 				D5B89CCA20984CA000191A92 /* Beeper.entitlements */,
 			);
 			path = Beeper;
+			sourceTree = "<group>";
+		};
+		D5B89CD020987EE500191A92 /* Resuorces */ = {
+			isa = PBXGroup;
+			children = (
+				D5B89CD120987F0C00191A92 /* beep.mp3 */,
+				D5B89CD220987F0C00191A92 /* silence.mp3 */,
+			);
+			path = Resuorces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,8 +133,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5B89CD420987F0C00191A92 /* silence.mp3 in Resources */,
 				D5B89CC520984CA000191A92 /* Assets.xcassets in Resources */,
 				D5B89CC820984CA000191A92 /* MainMenu.xib in Resources */,
+				D5B89CD320987F0C00191A92 /* beep.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
